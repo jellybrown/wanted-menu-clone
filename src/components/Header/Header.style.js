@@ -104,13 +104,23 @@ export const CompanyBtn = styled.a`
   }
 `;
 
+export const ExploreWrapper = styled.div`
+  width: 100%;
+  background-color: white;
+  visibility: ${({ isActive }) => (isActive ? "visible" : "hiden")};
+  opacity: ${({ isActive }) => (isActive ? "1" : "0")};
+  height: ${({ isActive }) => (isActive ? "480px" : "0")};
+  transition: 0.5s;
+`;
+
 export const Explore = styled.div`
   width: 90%;
   max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 20px;
-  margin: 40px auto;
+  padding: 40px 0;
+  margin: 0 auto;
 `;
 
 export const ClosedItems = styled.div``;

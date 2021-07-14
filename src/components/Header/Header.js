@@ -17,16 +17,28 @@ import {
   CompanyBtn,
   Avatar,
   ClosedItems,
+  ExploreWrapper,
 } from "./Header.style";
 import ClosedItem from "../ClosedItem";
 
-const Header = () => {
+const Header = ({ activeExplore, setActiveExplore }) => {
+  const checkAndFalseActive = (e) => {
+    // 메뉴가 explore일 때는 active상태 유지
+    if (
+      e.target.classList.contains("explore") ||
+      e.target.parentNode.classList.contains("explore")
+    ) {
+      return;
+    }
+    setActiveExplore(false);
+  };
+
   return (
     <Wrapper>
-      <TopHeader>
+      <TopHeader onMouseOver={(e) => checkAndFalseActive(e)}>
         <Logo>wanted</Logo>
         <Menu>
-          <Item>
+          <Item className="explore" onMouseOver={() => setActiveExplore(true)}>
             <a>탐색</a>
           </Item>
           <Item>
@@ -62,16 +74,18 @@ const Header = () => {
           <CompanyBtn>기업 서비스</CompanyBtn>
         </Aside>
       </TopHeader>
-      <Explore>
-        {spreadData.map((data) => (
-          <SpreadItem key={data.id} data={data} />
-        ))}
-        <ClosedItems>
-          {closedData.map((data) => (
-            <ClosedItem key={data.id} data={data} />
+      <ExploreWrapper isActive={activeExplore} className="exxxxxx">
+        <Explore>
+          {spreadData.map((data) => (
+            <SpreadItem key={data.id} data={data} />
           ))}
-        </ClosedItems>
-      </Explore>
+          <ClosedItems>
+            {closedData.map((data) => (
+              <ClosedItem key={data.id} data={data} />
+            ))}
+          </ClosedItems>
+        </Explore>
+      </ExploreWrapper>
     </Wrapper>
   );
 };
