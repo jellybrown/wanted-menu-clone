@@ -9,12 +9,18 @@ export const Title = styled.a`
   }
 `;
 
-export const Arrow = styled.img`
-  margin-right: 20px;
-`;
+export const Arrow = styled.img``;
 
-export const List = styled.ul``;
+export const List = styled.ul`
+  width: 80%;
+`;
 
 export const Item = styled.li`
   display: block;
+  padding: 5px 0;
+  width: 100%;
+  cursor: pointer;
+  a {
+    display: block;
+  }
 `;

@@ -2,8 +2,8 @@ import React from "react";
 import bell from "../../assets/bell.svg";
 import mGlass from "../../assets/magnifying-glass.svg";
 import user from "../../assets/user-img.png";
-import { exploreData } from "../../menuData";
-import ExploreItem from "../ExploreItem/ExploreItem";
+import { spreadData, closedData } from "../../menuData";
+import SpreadItem from "../SpreadItem/SpreadItem";
 import nextArrow from "../../assets/next-arrow.svg";
 import {
   Wrapper,
@@ -20,6 +20,15 @@ import {
   Arrow,
   ClosedItems,
 } from "./Header.style";
+
+const ClosedItem = ({ data }) => {
+  return (
+    <a>
+      <h2>{data.title}</h2>
+      <Arrow src={nextArrow} width="14px" alt="more" />
+    </a>
+  );
+};
 
 const Header = () => {
   return (
@@ -64,46 +73,13 @@ const Header = () => {
         </Aside>
       </TopHeader>
       <Explore>
-        {exploreData.map((data) => (
-          <ExploreItem key={data.id} data={data} />
+        {spreadData.map((data) => (
+          <SpreadItem key={data.id} data={data} />
         ))}
         <ClosedItems>
-          <a>
-            <h2>엔지니어링 설계</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>물류·무역</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>제조·생산</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>의료·제약·바이오</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>교육</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>법률·법집행기관</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>식·음료</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>건설·시설</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
-          <a>
-            <h2>공공·복지</h2>
-            <Arrow src={nextArrow} width="18px" alt="more" />
-          </a>
+          {closedData.map((data) => (
+            <ClosedItem key={data.id} data={data} />
+          ))}
         </ClosedItems>
       </Explore>
     </Wrapper>

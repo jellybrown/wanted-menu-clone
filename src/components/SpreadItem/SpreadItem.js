@@ -1,8 +1,8 @@
 import React from "react";
 import nextArrow from "../../assets/next-arrow.svg";
-import { Arrow, Item, List, Title, Wrapper } from "./ExploreItem.style";
+import { Arrow, Item, List, Title, Wrapper } from "./SpreadItem.style";
 
-const ExploreItem = ({ data }) => {
+const SpreadItem = ({ data }) => {
   return (
     <Wrapper>
       <Title>
@@ -25,4 +25,4 @@ const ExploreItem = ({ data }) => {
   );
 };
 
-export default ExploreItem;
+export default SpreadItem;

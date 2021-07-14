@@ -106,6 +106,7 @@ export const Explore = styled.div`
   max-width: 1060px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
   margin: 40px auto;
 `;
 

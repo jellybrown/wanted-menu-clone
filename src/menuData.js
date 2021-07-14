@@ -1,4 +1,4 @@
-export const exploreData = [
+export const spreadData = [
   {
     id: 1,
     title: "영업",
@@ -63,5 +63,44 @@ export const exploreData = [
       "애널리스트",
       "내부통제 담당자",
     ],
+  },
+];
+
+export const closedData = [
+  {
+    id: 6,
+    title: "엔지니어링 설계",
+  },
+  {
+    id: 7,
+    title: "물류·무역",
+  },
+  {
+    id: 8,
+    title: "제조·생산",
+  },
+  {
+    id: 9,
+    title: "의료·제약·바이오",
+  },
+  {
+    id: 10,
+    title: "교육",
+  },
+  {
+    id: 11,
+    title: "법률·법집행기관",
+  },
+  {
+    id: 12,
+    title: "식·음료",
+  },
+  {
+    id: 13,
+    title: "건설·시설",
+  },
+  {
+    id: 14,
+    title: "공공·복지",
   },
 ];
