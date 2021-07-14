@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import nIcon from "../../assets/n.svg";
 
 export const Wrapper = styled.header`
   position: relative;
@@ -20,6 +21,7 @@ export const Logo = styled.h1`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const Menu = styled.ul`
@@ -38,6 +40,7 @@ export const Item = styled.li`
     width: 100%;
     height: 100%;
     cursor: pointer;
+    font-weight: 600;
   }
   &:after {
     content: "";
@@ -70,14 +73,33 @@ export const Icons = styled.div`
 `;
 
 export const Icon = styled.div`
-  width: ${({ isAvatar }) => (isAvatar ? "30px" : "18px")};
-  height: ${({ isAvatar }) => (isAvatar ? "30px" : "18px")};
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
-  padding: 0 10px;
-  margin-right: ${({ isAvatar }) => (isAvatar ? "10px" : 0)};
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 5px;
+  margin-right: ${({ isAvatar }) => (isAvatar ? "14px" : 0)};
+  position: relative;
   > img {
-    width: 100%;
+    width: 18px;
+    height: 18px;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: -5px;
+    width: 14px;
+    height: 13px;
+    background-color: ${({ isNew, theme }) =>
+      isNew ? theme.color.blue : "none"};
+    background-image: ${({ isNew }) => (isNew ? `url("${nIcon}")` : "none")};
+    background-size: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
   }
 `;
 
@@ -89,6 +111,7 @@ export const Avatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
   > img {
     width: 28px;
     height: 28px;
@@ -108,6 +131,7 @@ export const CompanyBtn = styled.a`
   padding: 0 10px;
   margin-left: 20px;
   position: relative;
+  cursor: pointer;
 
   &:before {
     position: absolute;

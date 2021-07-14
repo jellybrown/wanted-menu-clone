@@ -62,10 +62,10 @@ const Header = ({ activeExplore, setActiveExplore }) => {
             <Icon>
               <img src={mGlass} alt="search" />
             </Icon>
-            <Icon>
+            <Icon isNew={true}>
               <img src={bell} alt="notification" />
             </Icon>
-            <Icon isAvatar={true}>
+            <Icon isAvatar={true} isNew={true}>
               <Avatar>
                 <img src={user} alt="user profile" />
               </Avatar>
