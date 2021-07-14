@@ -5,7 +5,7 @@ export const Content = styled.div`
 
   background-color: ${({ isActive }) =>
     isActive ? "rgba(0,0,0,0.8)" : "none"};
-  transition: 0.8s;
+  transition: ${({ isActive }) => (isActive ? "0.8s" : "0")};
   p {
     font-size: 20px;
   }

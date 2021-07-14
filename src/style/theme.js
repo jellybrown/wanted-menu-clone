@@ -3,6 +3,7 @@ const color = {
   grayNormal: "#E1E2E3",
   grayDeep: "#9F9F9F",
   blue: "#456EED",
+  blueLine: "#558DE8",
 };
 
 const size = {

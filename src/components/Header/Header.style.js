@@ -30,6 +30,7 @@ export const Menu = styled.ul`
 export const Item = styled.li`
   padding: 0 20px;
   height: 100%;
+  position: relative;
   a {
     display: inline-flex;
     justify-content: center;
@@ -37,6 +38,22 @@ export const Item = styled.li`
     width: 100%;
     height: 100%;
     cursor: pointer;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: ${({ theme }) => theme.color.blueLine};
+    opacity: 0;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
   }
 `;
 
@@ -110,7 +127,7 @@ export const ExploreWrapper = styled.div`
   visibility: ${({ isActive }) => (isActive ? "visible" : "hiden")};
   opacity: ${({ isActive }) => (isActive ? "1" : "0")};
   height: ${({ isActive }) => (isActive ? "480px" : "0")};
-  transition: 0.5s;
+  transition: ${({ isActive }) => (isActive ? "0.3s" : "0")};
 `;
 
 export const Explore = styled.div`
