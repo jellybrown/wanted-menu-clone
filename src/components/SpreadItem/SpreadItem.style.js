@@ -7,6 +7,7 @@ export const Title = styled.a`
   justify-content: space-between;
   margin-bottom: 20px;
   h2 {
+    font-weight: 600;
   }
 `;
 
@@ -25,6 +26,7 @@ export const Item = styled.li`
 
   a {
     display: block;
+    color: ${({ theme }) => theme.color.grayDeep};
   }
 `;
 
@@ -36,5 +38,6 @@ export const More = styled.li`
   font-weight: 500;
 
   a {
+    color: ${({ theme }) => theme.color.grayDeep};
   }
 `;

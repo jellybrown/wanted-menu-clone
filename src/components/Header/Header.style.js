@@ -4,7 +4,7 @@ export const Wrapper = styled.header`
   position: relative;
   height: 50px;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: ${({ theme }) => `1px solid ${theme.color.grayLight}`};
 `;
 
 export const TopHeader = styled.div`
@@ -67,7 +67,7 @@ export const Icon = styled.div`
 export const Avatar = styled.div`
   width: 30px;
   height: 30px;
-  border: 1px solid #e1e2e3;
+  border: ${({ theme }) => `1px solid ${theme.color.grayNormal}`};
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -81,7 +81,10 @@ export const Avatar = styled.div`
 
 export const CompanyBtn = styled.a`
   display: inline-block;
-  border: 1px solid #e1e2e3;
+  border: ${({ theme }) => `1px solid ${theme.color.grayNormal}`};
+  color: ${({ theme }) => theme.color.grayDeep};
+  font-size: 13px;
+  font-weight: 600;
   border-radius: 15px;
   height: 30px;
   line-height: 30px;
@@ -95,7 +98,7 @@ export const CompanyBtn = styled.a`
     left: -20px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ddd;
+    background-color: ${({ theme }) => theme.color.grayNormal};
     height: 10px;
     width: 1px;
   }

@@ -7,6 +7,9 @@ const Wrapper = styled.a`
   justify-content: space-between;
   cursor: pointer;
   padding: 10px 0;
+  h2 {
+    font-weight: 600;
+  }
 
   &:first-child {
     padding: 0 0 10px 0;
