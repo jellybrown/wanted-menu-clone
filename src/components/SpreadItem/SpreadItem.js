@@ -1,13 +1,13 @@
 import React from "react";
 import nextArrow from "../../assets/next-arrow.svg";
-import { Arrow, Item, List, Title, Wrapper } from "./SpreadItem.style";
+import { Arrow, Item, List, More, Title, Wrapper } from "./SpreadItem.style";
 
 const SpreadItem = ({ data }) => {
   return (
     <Wrapper>
       <Title>
         <h2>{data.title}</h2>
-        <Arrow src={nextArrow} width="18px" alt="more" />
+        <Arrow src={nextArrow} width="12px" alt="more" />
       </Title>
       <List>
         {data &&
@@ -16,10 +16,10 @@ const SpreadItem = ({ data }) => {
               <a>{item}</a>
             </Item>
           ))}
-        <li>
+        <More>
           <a>더보기</a>
-          <Arrow src={nextArrow} width="14px" alt="more" />
-        </li>
+          <Arrow src={nextArrow} width="12px" alt="more" />
+        </More>
       </List>
     </Wrapper>
   );

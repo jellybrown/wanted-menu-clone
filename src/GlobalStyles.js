@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
     h1, h2 {
         display: inline-block;
     }
+    h2 {
+        font-size: 18px;
+    }
 
 
 `;

@@ -9,7 +9,7 @@ export const Wrapper = styled.header`
 
 export const TopHeader = styled.div`
   width: 90%;
-  max-width: 1060px;
+  max-width: 1200px;
   height: 100%;
   display: flex;
   margin: 0 auto;
@@ -103,18 +103,13 @@ export const CompanyBtn = styled.a`
 
 export const Explore = styled.div`
   width: 90%;
-  max-width: 1060px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 20px;
   margin: 40px auto;
 `;
 
-export const ClosedItems = styled.div`
-  a {
-    display: block;
-    padding: 10px 0;
-  }
-`;
+export const ClosedItems = styled.div``;
 
 export const Arrow = styled.img``;

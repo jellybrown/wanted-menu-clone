@@ -69,7 +69,7 @@ export const spreadData = [
 export const closedData = [
   {
     id: 6,
-    title: "엔지니어링 설계",
+    title: "엔지니어링·설계",
   },
   {
     id: 7,

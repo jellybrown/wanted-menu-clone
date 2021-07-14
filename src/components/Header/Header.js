@@ -4,7 +4,6 @@ import mGlass from "../../assets/magnifying-glass.svg";
 import user from "../../assets/user-img.png";
 import { spreadData, closedData } from "../../menuData";
 import SpreadItem from "../SpreadItem/SpreadItem";
-import nextArrow from "../../assets/next-arrow.svg";
 import {
   Wrapper,
   Aside,
@@ -17,18 +16,9 @@ import {
   Icons,
   CompanyBtn,
   Avatar,
-  Arrow,
   ClosedItems,
 } from "./Header.style";
-
-const ClosedItem = ({ data }) => {
-  return (
-    <a>
-      <h2>{data.title}</h2>
-      <Arrow src={nextArrow} width="14px" alt="more" />
-    </a>
-  );
-};
+import ClosedItem from "../ClosedItem";
 
 const Header = () => {
   return (
