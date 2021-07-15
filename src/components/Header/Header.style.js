@@ -243,7 +243,7 @@ export const MobileItem = styled.li`
     }
   }
 
-  &:last-child {
+  &:last-child a {
     color: ${({ theme }) => theme.color.grayDeep};
   }
 `;
