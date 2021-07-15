@@ -191,3 +191,63 @@ export const Explore = styled.div`
 export const ClosedItems = styled.div``;
 
 export const Arrow = styled.img``;
+
+export const MobileNav = styled.nav`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120vh;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+`;
+export const MobileTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const MobileMenu = styled.ul`
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+`;
+
+export const MobileItem = styled.li`
+  display: block;
+  position: relative;
+
+  a {
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    padding: 15px 0;
+    position: relative;
+    margin-top: ${({ isTopLine }) => (isTopLine ? "20px" : 0)};
+
+    &:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: -10px;
+      width: 100%;
+      height: ${({ isTopLine }) => (isTopLine ? "1px" : 0)};
+      background-color: ${({ theme }) => theme.color.grayLight};
+    }
+  }
+
+  &:last-child {
+    color: ${({ theme }) => theme.color.grayDeep};
+  }
+`;
+
+export const MobileAvtar = styled.img`
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+`;

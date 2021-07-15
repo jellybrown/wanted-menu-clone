@@ -3,6 +3,8 @@ import bell from "../../assets/bell.svg";
 import mGlass from "../../assets/magnifying-glass.svg";
 import user from "../../assets/user-img.png";
 import menu from "../../assets/menu.svg";
+import wantedLogo from "../../assets/wanted-logo.png";
+import close from "../../assets/close.svg";
 import { spreadData, closedData } from "../../menuData";
 import SpreadItem from "../SpreadItem/SpreadItem";
 import {
@@ -19,6 +21,11 @@ import {
   Avatar,
   ClosedItems,
   ExploreWrapper,
+  MobileMenu,
+  MobileItem,
+  MobileNav,
+  MobileTop,
+  MobileAvtar,
 } from "./Header.style";
 import ClosedItem from "../ClosedItem";
 import { useMediaQuery } from "react-responsive";
@@ -104,7 +111,7 @@ const Header = ({ activeExplore, setActiveExplore }) => {
           {!isMobile && <CompanyBtn>기업 서비스</CompanyBtn>}
         </Aside>
       </TopHeader>
-      <ExploreWrapper isActive={activeExplore} className="exxxxxx">
+      <ExploreWrapper isActive={activeExplore}>
         <Explore>
           {spreadData.map((data) => (
             <SpreadItem key={data.id} data={data} />
@@ -116,6 +123,48 @@ const Header = ({ activeExplore, setActiveExplore }) => {
           </ClosedItems>
         </Explore>
       </ExploreWrapper>
+      <MobileNav>
+        <MobileTop>
+          <img src={wantedLogo} alt="wanted logo" width="59px" />
+          <img src={close} alt="mobile menu close" width="26px" />
+        </MobileTop>
+        <MobileMenu>
+          <MobileItem>
+            <a>MY 원티드</a>
+            <MobileAvtar src={user} alt="user profile" />
+          </MobileItem>
+          <MobileItem>
+            <a>프로필</a>
+          </MobileItem>
+          <MobileItem isTopLine={true}>
+            <a>이력서</a>
+          </MobileItem>
+          <MobileItem>
+            <a>매치업</a>
+          </MobileItem>
+          <MobileItem>
+            <a>추천</a>
+          </MobileItem>
+          <MobileItem>
+            <a>지원현황</a>
+          </MobileItem>
+          <MobileItem>
+            <a>프리랜서</a>
+          </MobileItem>
+          <MobileItem isTopLine={true}>
+            <a>직군별 연봉</a>
+          </MobileItem>
+          <MobileItem>
+            <a>커리어 성장</a>
+          </MobileItem>
+          <MobileItem isTopLine={true}>
+            <a>기업 서비스</a>
+          </MobileItem>
+          <MobileItem>
+            <a>로그아웃</a>
+          </MobileItem>
+        </MobileMenu>
+      </MobileNav>
     </Wrapper>
   );
 };
