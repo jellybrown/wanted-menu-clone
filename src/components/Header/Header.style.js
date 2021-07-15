@@ -14,6 +14,10 @@ export const TopHeader = styled.div`
   height: 100%;
   display: flex;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.mobile} {
+    width: 97%;
+  }
 `;
 
 export const Logo = styled.h1`
@@ -27,12 +31,17 @@ export const Logo = styled.h1`
 export const Menu = styled.ul`
   height: 100%;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.mobile} {
+    flex: 1;
+  }
 `;
 
 export const Item = styled.li`
   padding: 0 20px;
   height: 100%;
   position: relative;
+
   a {
     display: inline-flex;
     justify-content: center;
@@ -57,6 +66,21 @@ export const Item = styled.li`
     &:after {
       opacity: 1;
     }
+  }
+
+  @media ${({ theme }) => theme.tablet} {
+    padding: 0 12px;
+    font-size: 13px;
+    &:hover {
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.mobile} {
+    padding: 0 12px;
+    font-size: 13px;
   }
 `;
 

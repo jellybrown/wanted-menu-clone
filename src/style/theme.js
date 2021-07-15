@@ -6,12 +6,14 @@ const color = {
   blueLine: "#558DE8",
 };
 
-const size = {
-  mobile: "768px",
+export const size = {
+  tablet: "986px",
+  mobile: "800px",
 };
 
 const theme = {
   color,
+  tablet: `(max-width: ${size.tablet})`,
   mobile: `(max-width: ${size.mobile})`,
 };
 
