@@ -7,6 +7,7 @@ const Wrapper = styled.a`
   justify-content: space-between;
   cursor: pointer;
   padding: 10px 0;
+
   h2 {
     font-weight: 600;
   }
@@ -16,13 +17,11 @@ const Wrapper = styled.a`
   }
 `;
 
-const Arrow = styled.img``;
-
 const ClosedItem = ({ data }) => {
   return (
     <Wrapper>
       <h2>{data.title}</h2>
-      <Arrow src={nextArrow} width="12px" alt="more" />
+      <img src={nextArrow} width="12px" alt="more" />
     </Wrapper>
   );
 };

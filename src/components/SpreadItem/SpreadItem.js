@@ -11,13 +11,13 @@ const SpreadItem = ({ data }) => {
       </Title>
       <List>
         {data &&
-          data.menu.map((item) => (
-            <Item>
-              <a>{item}</a>
+          data.menu.map((item, idx) => (
+            <Item key={idx}>
+              <a href="#a">{item}</a>
             </Item>
           ))}
         <More>
-          <a>더보기</a>
+          <a href="#a">더보기</a>
           <Arrow src={nextArrow} width="12px" alt="more" />
         </More>
       </List>

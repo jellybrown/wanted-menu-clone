@@ -7,6 +7,7 @@ export const Title = styled.a`
   justify-content: space-between;
   margin-bottom: 20px;
   cursor: pointer;
+
   h2 {
     font-weight: 600;
   }

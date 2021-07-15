@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import bell from "../../assets/bell.svg";
 import mGlass from "../../assets/magnifying-glass.svg";
 import user from "../../assets/user-img.png";
@@ -55,13 +55,13 @@ const Header = ({ activeExplore, setActiveExplore }) => {
           {isMobile ? (
             <>
               <Item>
-                <a>홈</a>
+                <a href="#a">홈</a>
               </Item>
               <Item>
-                <a>탐색</a>
+                <a href="#a">탐색</a>
               </Item>
               <Item>
-                <a>커리어 성장</a>
+                <a href="#a">커리어 성장</a>
               </Item>
             </>
           ) : (
@@ -70,22 +70,22 @@ const Header = ({ activeExplore, setActiveExplore }) => {
                 className="explore"
                 onMouseOver={() => setActiveExplore(true)}
               >
-                <a>탐색</a>
+                <a href="#a">탐색</a>
               </Item>
               <Item>
-                <a>커리어 성장</a>
+                <a href="#a">커리어 성장</a>
               </Item>
               <Item>
-                <a>직군별 연봉</a>
+                <a href="#a">직군별 연봉</a>
               </Item>
               <Item>
-                <a>이력서</a>
+                <a href="#a">이력서</a>
               </Item>
               <Item>
-                <a>매치업</a>
+                <a href="#a">매치업</a>
               </Item>
               <Item>
-                <a>프리랜서</a>
+                <a href="#a">프리랜서</a>
               </Item>
             </>
           )}
@@ -137,38 +137,38 @@ const Header = ({ activeExplore, setActiveExplore }) => {
         </MobileTop>
         <MobileMenu>
           <MobileItem>
-            <a>MY 원티드</a>
+            <a href="#a">MY 원티드</a>
             <MobileAvtar src={user} alt="user profile" />
           </MobileItem>
           <MobileItem>
-            <a>프로필</a>
+            <a href="#a">프로필</a>
           </MobileItem>
           <MobileItem isTopLine={true}>
-            <a>이력서</a>
+            <a href="#a">이력서</a>
           </MobileItem>
           <MobileItem>
-            <a>매치업</a>
+            <a href="#a">매치업</a>
           </MobileItem>
           <MobileItem>
-            <a>추천</a>
+            <a href="#a">추천</a>
           </MobileItem>
           <MobileItem>
-            <a>지원현황</a>
+            <a href="#a">지원현황</a>
           </MobileItem>
           <MobileItem>
-            <a>프리랜서</a>
+            <a href="#a">프리랜서</a>
           </MobileItem>
           <MobileItem isTopLine={true}>
-            <a>직군별 연봉</a>
+            <a href="#a">직군별 연봉</a>
           </MobileItem>
           <MobileItem>
-            <a>커리어 성장</a>
+            <a href="#a">커리어 성장</a>
           </MobileItem>
           <MobileItem isTopLine={true}>
-            <a>기업 서비스</a>
+            <a href="#a">기업 서비스</a>
           </MobileItem>
           <MobileItem>
-            <a>로그아웃</a>
+            <a href="#a">로그아웃</a>
           </MobileItem>
         </MobileMenu>
       </MobileNav>

@@ -26,7 +26,10 @@ const GlobalStyle = createGlobalStyle`
     h2 {
         font-size: 18px;
     }
-
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
 `;
 
