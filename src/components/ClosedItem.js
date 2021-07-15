@@ -10,6 +10,10 @@ const Wrapper = styled.a`
 
   h2 {
     font-weight: 600;
+
+    @media ${({ theme }) => theme.tablet} {
+      font-size: 15px;
+    }
   }
 
   &:first-child {

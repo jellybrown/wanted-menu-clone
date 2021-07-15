@@ -113,18 +113,20 @@ const Header = ({ activeExplore, setActiveExplore }) => {
           {!isMobile && <CompanyBtn>기업 서비스</CompanyBtn>}
         </Aside>
       </TopHeader>
-      <ExploreWrapper isActive={activeExplore}>
-        <Explore>
-          {spreadData.map((data) => (
-            <SpreadItem key={data.id} data={data} />
-          ))}
-          <ClosedItems>
-            {closedData.map((data) => (
-              <ClosedItem key={data.id} data={data} />
+      {!isMobile && (
+        <ExploreWrapper isActive={activeExplore}>
+          <Explore>
+            {spreadData.map((data) => (
+              <SpreadItem key={data.id} data={data} />
             ))}
-          </ClosedItems>
-        </Explore>
-      </ExploreWrapper>
+            <ClosedItems>
+              {closedData.map((data) => (
+                <ClosedItem key={data.id} data={data} />
+              ))}
+            </ClosedItems>
+          </Explore>
+        </ExploreWrapper>
+      )}
       <MobileNav isOpened={isOpenedMenu}>
         <MobileTop>
           <img src={wantedLogo} alt="wanted logo" width="59px" />
