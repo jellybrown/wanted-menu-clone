@@ -21,7 +21,6 @@ export const TopHeader = styled.div`
 `;
 
 export const Logo = styled.h1`
-  height: 50px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -192,6 +191,7 @@ export const ClosedItems = styled.div``;
 
 export const Arrow = styled.img``;
 
+/* mobile nav */
 export const MobileNav = styled.nav`
   position: absolute;
   left: 0;
@@ -202,10 +202,16 @@ export const MobileNav = styled.nav`
   background-color: white;
   box-sizing: border-box;
   overflow: hidden;
+  visibility: ${({ isOpened }) => (isOpened ? "visible" : "hidden")};
+  opacity: ${({ isOpened }) => (isOpened ? "1" : "0")};
 `;
 export const MobileTop = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const Close = styled.img`
+  cursor: pointer;
 `;
 
 export const MobileMenu = styled.ul`

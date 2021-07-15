@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bell from "../../assets/bell.svg";
 import mGlass from "../../assets/magnifying-glass.svg";
 import user from "../../assets/user-img.png";
@@ -26,14 +26,16 @@ import {
   MobileNav,
   MobileTop,
   MobileAvtar,
+  Close,
 } from "./Header.style";
 import ClosedItem from "../ClosedItem";
 import { useMediaQuery } from "react-responsive";
 import { size } from "../../style/theme";
+import useToggle from "../../hooks/useToggle";
 
 const Header = ({ activeExplore, setActiveExplore }) => {
   const isMobile = useMediaQuery({ query: `(max-width: ${size.mobile})` });
-
+  const [isOpenedMenu, onCloseMenu, onOpenMenu] = useToggle(); // mobile menu state
   const checkAndFalseActive = (e) => {
     // 메뉴가 explore일 때는 active상태 유지
     if (
@@ -48,6 +50,7 @@ const Header = ({ activeExplore, setActiveExplore }) => {
   return (
     <Wrapper>
       <TopHeader onMouseOver={(e) => checkAndFalseActive(e)}>
+        {!isMobile && <Logo>wanted</Logo>}
         <Menu>
           {isMobile ? (
             <>
@@ -63,7 +66,6 @@ const Header = ({ activeExplore, setActiveExplore }) => {
             </>
           ) : (
             <>
-              <Logo>wanted</Logo>
               <Item
                 className="explore"
                 onMouseOver={() => setActiveExplore(true)}
@@ -97,7 +99,7 @@ const Header = ({ activeExplore, setActiveExplore }) => {
               <img src={bell} alt="notification" />
             </Icon>
             {isMobile ? (
-              <Icon>
+              <Icon onClick={onOpenMenu}>
                 <img src={menu} alt="menu" />
               </Icon>
             ) : (
@@ -123,10 +125,15 @@ const Header = ({ activeExplore, setActiveExplore }) => {
           </ClosedItems>
         </Explore>
       </ExploreWrapper>
-      <MobileNav>
+      <MobileNav isOpened={isOpenedMenu}>
         <MobileTop>
           <img src={wantedLogo} alt="wanted logo" width="59px" />
-          <img src={close} alt="mobile menu close" width="26px" />
+          <Close
+            src={close}
+            alt="mobile menu close"
+            width="26px"
+            onClick={onCloseMenu}
+          />
         </MobileTop>
         <MobileMenu>
           <MobileItem>
