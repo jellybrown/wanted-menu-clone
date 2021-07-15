@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# wanted-menu-clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 소개
 
-## Available Scripts
+- 채용사이트 wanted의 상단 메뉴 부분을 구현했습니다.
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+## 기간
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 2021.07.14 ~ 07.15
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br>
 
-### `yarn test`
+## 사용된 기술, 라이브러리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- styled-component: 중첩 스타일링 및 조건부 스타일링을 위해
+- React-responsive: 반응형 구현
 
-### `yarn build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 구현기능
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. PC: 2중 슬라이드 메뉴 구현
 
-### `yarn eject`
+- PC화면일 경우, 탐색 영역에 마우스오버시 슬라이드 메뉴가 활성화 되도록 했습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```js
+// Header.js
+// 상단 메뉴중 탐색
+<Item className="explore" onMouseOver={() => setActiveExplore(true)}>
+  <a href="#a">탐색</a>
+</Item>
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- styled-component의 조건부 스타일링을 이용해서 화면에 나타나도록 했습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+// Header.style.js
+export const ExploreWrapper = styled.div`
+  width: 100%;
+  background-color: white;
+  visibility: ${({ isActive }) => (isActive ? "visible" : "hiden")};
+  opacity: ${({ isActive }) => (isActive ? "1" : "0")};
+  height: ${({ isActive }) => (isActive ? "480px" : "0")};
+  transition: ${({ isActive }) => (isActive ? "0.3s" : "0")};
+`;
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```js
+// Header.js
+// 슬라이드 메뉴는 isActive가 true일 경우 나타남
+{
+  !isMobile && (
+    <ExploreWrapper isActive={activeExplore}>
+      <Explore>
+        {spreadData.map((data) => (
+          <SpreadItem key={data.id} data={data} />
+        ))}
+        <ClosedItems>
+          {closedData.map((data) => (
+            <ClosedItem key={data.id} data={data} />
+          ))}
+        </ClosedItems>
+      </Explore>
+    </ExploreWrapper>
+  );
+}
+```
 
-## Learn More
+### 2. mobile: 반응형 메뉴 구현
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 모바일에서는 일부 영역은 사라지게 하고, 모바일에서만 사용될 메뉴를 구현하였습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+// Header.js
+<MobileNav isOpened={isOpenedMenu}>
+  <MobileTop>
+    <img src={wantedLogo} alt="wanted logo" width="59px" />
+    <Close
+      src={close}
+      alt="mobile menu close"
+      width="26px"
+      onClick={onCloseMenu}
+    />
+  </MobileTop>
+  <MobileMenu>
+    <MobileItem>
+      <a href="#a">MY 원티드</a>
+      <MobileAvtar src={user} alt="user profile" />
+    </MobileItem>
+    <MobileItem>
+      <a href="#a">프로필</a>
+    </MobileItem>
+    // ...
+  </MobileMenu>
+</MobileNav>
+```
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 영상
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="https://github.com/jellybrown/wanted-menu-clone/blob/master/wanted-menu.gif" width="800"/>
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 링크
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://eloquent-hermann-ddd5d5.netlify.app/">👉 보러가기</a>
